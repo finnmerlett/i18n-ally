@@ -151,6 +151,10 @@ export class Config {
     return this.getConfig<boolean>('keyPrefix')
   }
 
+  static get reactI18nextHookName(): string {
+    return this.getConfig<string>('reactI18nextHookName') || 'useTranslation'
+  }
+
   static get enabledFrameworks(): string[] | undefined {
     let ids = this.getConfig<string | string[]>('enabledFrameworks')
     if (!ids || !ids.length)
